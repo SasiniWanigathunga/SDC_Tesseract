@@ -69,7 +69,7 @@ public class QuestionnaireManager : MonoBehaviour
             {
                 // Handle the case where parsing the score fails (unexpected data format)
                 Debug.LogError("Failed to parse score from the API response.");
-                GlobalManager.Instance.SetScore(0);
+                GlobalManager.Instance.SetScore(score);
             }
         }
         else
