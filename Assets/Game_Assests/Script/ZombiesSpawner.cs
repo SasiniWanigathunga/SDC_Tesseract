@@ -25,13 +25,14 @@ public class ZombiesSpawner: MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Time.time);
         foreach (Zombie zombie in zombies )
         {
             if (zombie.isSpawned == false && zombie.spawnTime <= Time.time)
             {
                 GameObject zombieInstance = Instantiate(zombiesPrefabs[(int)zombie.zombieType], transform.GetChild(zombie.Spawner).transform);
+                transform.GetChild(zombie.Spawner).GetComponent<SpawnPoint>().zombies.Add(zombieInstance);
                 zombie.isSpawned = true;
+
                 //zombieInstance.GetComponent<ZombieController>().FinalDestination = transform.GetChild(zombie.Spawner).GetComponent<SpawnPoint>().Destination;
             }
         }

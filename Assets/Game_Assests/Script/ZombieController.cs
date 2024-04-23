@@ -27,4 +27,18 @@ public class ZombieController : MonoBehaviour
             isStopped = true;
         }
     }
+
+    public void ReceiveDamage(int Damage)
+    {
+        
+        if (Health - Damage <= 0)
+        {
+            transform.parent.GetComponent<SpawnPoint>().zombies.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Health -= Damage;
+        }
+    }
 }

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scenes\SceneChangetoMenu.cs" />
     <Compile Include="Assets\Game_Assests\Script\ZombiesSpawner.cs" />
     <Compile Include="Assets\Game_Assests\Script\GameManager.cs" />
+    <Compile Include="Assets\Game_Assests\Script\PlantController.cs" />
     <Compile Include="Assets\Game_Assests\Script\Zombie.cs" />
     <Compile Include="Assets\Game_Assests\Script\SpawnPoint.cs" />
     <Compile Include="Assets\Game_Assests\Script\ZombieController.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\GlobalManager.cs" />
     <Compile Include="Assets\Scripts\QuestionnaireManager.cs" />
     <Compile Include="Assets\Scripts\AuthenticationManager.cs" />
+    <Compile Include="Assets\Game_Assests\Script\Bullet.cs" />
     <Compile Include="Assets\Game_Assests\Script\ObjectContainer.cs" />
     <Compile Include="Assets\Scripts\ProfileManager.cs" />
   </ItemGroup>
