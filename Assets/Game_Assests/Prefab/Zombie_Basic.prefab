@@ -54,7 +54,7 @@ MonoBehaviour:
   FinalDestination: {x: 0, y: 0, z: 0}
   Health: 181
   Damage: 100
-  movemnetSpeed: 0.1
+  movemnetSpeed: 2
 --- !u!50 &5910938943054315976
 Rigidbody2D:
   serializedVersion: 4
