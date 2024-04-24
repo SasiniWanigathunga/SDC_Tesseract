@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChangetoMenu : MonoBehaviour
+public class SceneChangeManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,13 @@ public class SceneChangetoMenu : MonoBehaviour
         
     }
 
-    public void ChangeScene()
+    public void ChangetoMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ChangetoGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }
