@@ -140,3 +140,4 @@ MonoBehaviour:
   attackCoolDown: 1
   damageValue: 50
   isAttacking: 0
+  Health: 5

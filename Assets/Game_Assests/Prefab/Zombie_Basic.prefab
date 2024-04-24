@@ -53,8 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FinalDestination: {x: 0, y: 0, z: 0}
   Health: 181
-  Damage: 100
-  movemnetSpeed: 2
+  damageValue: 1
+  movemnetSpeed: 0.2
+  damageCoolDown: 1
 --- !u!50 &5910938943054315976
 Rigidbody2D:
   serializedVersion: 4

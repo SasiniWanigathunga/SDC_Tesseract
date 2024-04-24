@@ -6,9 +6,10 @@ public class ZombieController : MonoBehaviour
 {
     public Vector3 FinalDestination;
     public int Health;
-    public int Damage;
+    public int damageValue;
     public float movemnetSpeed;
     private bool isStopped;
+    public float damageCoolDown;
 
     // Update is called once per frame
     void Update()
@@ -24,8 +25,25 @@ public class ZombieController : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
+            StartCoroutine(Attack(collision));
             isStopped = true;
         }
+    }
+
+    IEnumerator Attack(Collider2D collision)
+    {
+        if (collision == null)
+        {
+            isStopped = false;
+        }
+        else
+        {
+            collision.gameObject.GetComponent<PlantController>().ReceiveDamage(damageValue);
+            yield return new WaitForSeconds(damageCoolDown);
+            StartCoroutine(Attack(collision));
+
+        }
+        
     }
 
     public void ReceiveDamage(int Damage)
@@ -41,4 +59,5 @@ public class ZombieController : MonoBehaviour
             Health -= Damage;
         }
     }
+
 }

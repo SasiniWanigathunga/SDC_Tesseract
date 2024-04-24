@@ -11,6 +11,7 @@ public class PlantController : MonoBehaviour
     private float attackTime;
     public int damageValue;
     public bool isAttacking;
+    public int Health;
 
     private void Update()
     {
@@ -39,6 +40,18 @@ public class PlantController : MonoBehaviour
                 bulletInstance.GetComponent<Bullet>().damageValue = damageValue;
                 attackTime = Time.time + attackCoolDown;
             }    
+        }
+    }
+    public void ReceiveDamage(int Damage)
+    {
+        
+        if (Health - Damage <= 0)
+        {            
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Health -= Damage;
         }
     }
 }

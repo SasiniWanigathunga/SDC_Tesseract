@@ -29,6 +29,10 @@ public class ZombiesSpawner: MonoBehaviour
         {
             if (zombie.isSpawned == false && zombie.spawnTime <= Time.time)
             {
+                if (zombie.RandomSpawn)
+                {
+                    zombie.Spawner = Random.Range(0, transform.childCount);
+                }
                 GameObject zombieInstance = Instantiate(zombiesPrefabs[(int)zombie.zombieType], transform.GetChild(zombie.Spawner).transform);
                 transform.GetChild(zombie.Spawner).GetComponent<SpawnPoint>().zombies.Add(zombieInstance);
                 zombie.isSpawned = true;
