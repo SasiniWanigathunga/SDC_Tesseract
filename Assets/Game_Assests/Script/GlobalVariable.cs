@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GlobalVariable : MonoBehaviour
 {
-    private static GlobalVariable instance;
+    public static GlobalVariable instance;
 
     public bool isLost;
+    public float elapsedTime;
 
     void Awake()
     {
@@ -32,5 +33,9 @@ public class GlobalVariable : MonoBehaviour
     public void SetIsLost(bool value)
     {
         isLost = value;
+    }
+    public void SetElapsedTime(float value)
+    {
+        elapsedTime = value;
     }
 }

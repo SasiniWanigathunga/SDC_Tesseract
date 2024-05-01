@@ -6699,8 +6699,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2137654913}
-        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: ChangetoGameScene
+        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
+        m_MethodName: ChangetoPreGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

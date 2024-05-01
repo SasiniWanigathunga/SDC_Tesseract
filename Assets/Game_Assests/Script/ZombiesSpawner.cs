@@ -28,6 +28,7 @@ public class ZombiesSpawner: MonoBehaviour
         // Get reference to ZombieCount script
         zombieCounter = FindObjectOfType<ZombieCount>();
         
+        
     }
 
 
@@ -35,7 +36,7 @@ public class ZombiesSpawner: MonoBehaviour
     {
         foreach (Zombie zombie in zombies )
         {
-            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time)
+            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime)
             {
                 if (zombie.RandomSpawn)
                 {

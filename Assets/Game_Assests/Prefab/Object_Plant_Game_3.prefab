@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c754e268c0173f429b98c1cde4d2630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6425700762242136279, guid: 8854201787370ed4caad8d16717fb3f5, type: 3}
+  bullet: {fileID: 6425700762242136279, guid: b58cf8d74e7dd2640b62d0fc792cdf05, type: 3}
   zombies: []
   toAttack: {fileID: 0}
   attackCoolDown: 1

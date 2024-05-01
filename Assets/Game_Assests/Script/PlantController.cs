@@ -34,11 +34,11 @@ public class PlantController : MonoBehaviour
         }
         if (toAttack != null)
         {
-            if (Time.time >= attackTime )
+            if (Time.time - GlobalVariable.instance.elapsedTime >= attackTime )
             {
                 GameObject bulletInstance = Instantiate(bullet, transform);
                 bulletInstance.GetComponent<Bullet>().damageValue = damageValue;
-                attackTime = Time.time + attackCoolDown;
+                attackTime = Time.time - GlobalVariable.instance.elapsedTime + attackCoolDown;
             }    
         }
     }

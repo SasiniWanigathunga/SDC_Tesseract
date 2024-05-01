@@ -12,7 +12,7 @@ public class ZombieCount : MonoBehaviour
     public GameObject PopUpWon;
 
     // Function to update the zombie count
-void Start()
+    void Start()
     {
         PopUpWon.SetActive(false);
         StartCoroutine(CheckZombiesCoroutine());
@@ -20,8 +20,8 @@ void Start()
     public void UpdateZombieCount(int count)
     {
         zombieCount = count;
-        scoreText.text = ": " + zombieCount;
-        
+        scoreText.text = "" + zombieCount;
+
     }
 
     private IEnumerator CheckZombiesCoroutine()
@@ -42,7 +42,7 @@ void Start()
             yield return null;
         }
     }
-    
+
 
     private bool AreAllZombiesDestroyed()
     {
