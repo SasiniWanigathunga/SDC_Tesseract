@@ -77,10 +77,12 @@
     <Compile Include="Assets\Scripts\GlobalManager.cs" />
     <Compile Include="Assets\Scripts\QuestionnaireManager.cs" />
     <Compile Include="Assets\Scripts\AuthenticationManager.cs" />
+    <Compile Include="Assets\Game_Assests\Script\GlobalVariable.cs" />
     <Compile Include="Assets\Game_Assests\Script\Bullet.cs" />
     <Compile Include="Assets\Scripts\SceneChangeManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\ObjectContainer.cs" />
     <Compile Include="Assets\Scripts\ProfileManager.cs" />
+    <Compile Include="Assets\Game_Assests\Script\Canvas_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

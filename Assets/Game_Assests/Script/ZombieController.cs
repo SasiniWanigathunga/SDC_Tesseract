@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+
 
 public class ZombieController : MonoBehaviour
 {
@@ -10,13 +14,24 @@ public class ZombieController : MonoBehaviour
     public float movemnetSpeed;
     private bool isStopped;
     public float damageCoolDown;
+    
 
     // Update is called once per frame
+    
     void Update()
     {
         if (!isStopped)
         {
             transform.Translate(new Vector3(movemnetSpeed * -1, 0, 0));
+        }
+        
+        if (transform.position.x <= FinalDestination.x)
+        {
+            GlobalVariable.Instance.SetIsLost(true);
+            isStopped = true;
+            //transform.parent.GetComponent<SpawnPoint>().zombies.Remove(this.gameObject);
+            //Destroy(this.gameObject);
+            
         }
         
     }
@@ -59,5 +74,7 @@ public class ZombieController : MonoBehaviour
             Health -= Damage;
         }
     }
+
+    
 
 }
