@@ -5,6 +5,6 @@ using UnityEngine;
 public class ObjectDragging : MonoBehaviour
 {
     public ObjectCard card;
-
+    public int cardValue;
 
 }

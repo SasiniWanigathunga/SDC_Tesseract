@@ -549,8 +549,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2080941748}
-        m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
+      - m_Target: {fileID: 2080941749}
+        m_TargetAssemblyTypeName: ProfileManager_, Assembly-CSharp
         m_MethodName: UpdateProfile
         m_Mode: 1
         m_Arguments:
@@ -3541,8 +3541,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2080941748}
-        m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
+      - m_Target: {fileID: 2080941749}
+        m_TargetAssemblyTypeName: ProfileManager_, Assembly-CSharp
         m_MethodName: CloseProfile
         m_Mode: 1
         m_Arguments:
@@ -3673,7 +3673,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2080941749}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -6698,8 +6698,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137654913}
-        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
+      - m_Target: {fileID: 2137654911}
+        m_TargetAssemblyTypeName: SceneChangeManager_, Assembly-CSharp
         m_MethodName: ChangetoPreGameScene
         m_Mode: 1
         m_Arguments:
@@ -8558,9 +8558,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137654912}
+      - m_Target: {fileID: 11500000, guid: dde2c1ce19622564ca1ed0465d6f4ad5, type: 3}
         m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10838,9 +10838,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2080941748}
-        m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
-        m_MethodName: FetchProfile
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ProfileManager_, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10977,8 +10977,8 @@ GameObject:
   - component: {fileID: 2080941746}
   - component: {fileID: 2080941745}
   - component: {fileID: 2080941744}
-  - component: {fileID: 2080941748}
   - component: {fileID: 2080941749}
+  - component: {fileID: 2080941748}
   m_Layer: 5
   m_Name: Canvas2
   m_TagString: Untagged
@@ -11093,7 +11093,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2080941743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8601c3de3b9847a4ea036b927dea8c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: dde2c1ce19622564ca1ed0465d6f4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactAppUrl: http://localhost:3000/
+  apiBaseUrl: http://localhost:8080/
+  getScoreEndpoint: question/getScore
+--- !u!114 &2080941749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080941743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d83fd875b03e384f83e1e0b1927cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstNameInput: {fileID: 184607850}
@@ -11115,21 +11130,6 @@ MonoBehaviour:
   imageCover3: {fileID: 520557421}
   imageCover4: {fileID: 235825262}
   imageCover5: {fileID: 1395024367}
---- !u!114 &2080941749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080941743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d5638c369b99b4d9c467c34efb19dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reactAppUrl: http://localhost:3000/
-  apiBaseUrl: http://localhost:8080/
-  getScoreEndpoint: question/getScore
 --- !u!1 &2084434999
 GameObject:
   m_ObjectHideFlags: 0
@@ -11461,9 +11461,9 @@ GameObject:
   - component: {fileID: 2137654909}
   - component: {fileID: 2137654908}
   - component: {fileID: 2137654907}
-  - component: {fileID: 2137654911}
-  - component: {fileID: 2137654912}
   - component: {fileID: 2137654913}
+  - component: {fileID: 2137654912}
+  - component: {fileID: 2137654911}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -11570,12 +11570,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137654906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ec3889179e4dd469b1dbf064780b1b, type: 3}
+  m_Script: {fileID: 11500000, guid: daf73af1ce1b23843adbd7460b7185b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profileButton: {fileID: 2056239223}
-  canvas2: {fileID: 2080941743}
-  profileManager: {fileID: 2080941748}
 --- !u!114 &2137654912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11585,7 +11582,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137654906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d5638c369b99b4d9c467c34efb19dc, type: 3}
+  m_Script: {fileID: 11500000, guid: dde2c1ce19622564ca1ed0465d6f4ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reactAppUrl: http://localhost:3000/
@@ -11600,9 +11597,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137654906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33cdc2f76fcaac04f93a4da98a3cdb1c, type: 3}
+  m_Script: {fileID: 11500000, guid: c257c5e17bfaa0d4f8f34dce9e461d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  profileButton: {fileID: 2056239223}
+  canvas2: {fileID: 2080941743}
+  profileManager: {fileID: 2080941749}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

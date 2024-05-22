@@ -28,15 +28,26 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
         objectDragInstance = Instantiate(object_Drag, canvas.transform);
         objectDragInstance.transform.position = Input.mousePosition;
         objectDragInstance.GetComponent<ObjectDragging>().card = this;
+        
 
         gameManager.draggingObject = objectDragInstance;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        gameManager.PlaceObject();
-        gameManager.draggingObject = null;
-        Destroy(objectDragInstance);
+        int cardVal = objectDragInstance.GetComponent<ObjectDragging>().cardValue;
+        if (GlobalManager_.Instance.CreditCount >= cardVal)
+        {
+            Debug.Log("Dragging object cardValue: " + objectDragInstance.GetComponent<ObjectDragging>().cardValue);
+            gameManager.PlaceObject();        
+            GlobalManager_.Instance.SetCreditConsumption(GlobalManager_.Instance.CreditCosumption+cardVal);
+            gameManager.draggingObject = null;
+            Destroy(objectDragInstance);
+        }            
+        else
+        {
+            Destroy(objectDragInstance);
+        }
 
     }
 }

@@ -340,8 +340,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1069704980}
-        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+      - m_Target: {fileID: 1069704981}
+        m_TargetAssemblyTypeName: SceneChangeManager_, Assembly-CSharp
         m_MethodName: ChangetoMainMenu
         m_Mode: 1
         m_Arguments:
@@ -944,9 +944,9 @@ GameObject:
   - component: {fileID: 1069704977}
   - component: {fileID: 1069704976}
   - component: {fileID: 1069704975}
+  - component: {fileID: 1069704981}
   - component: {fileID: 1069704980}
-  - component: {fileID: 1069704982}
-  - component: {fileID: 1069704983}
+  - component: {fileID: 1069704979}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1039,6 +1039,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1069704979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069704973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe38f034ee0d52b4a874f982680c8845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  authorizeButton: {fileID: 1355962626}
+  PopUpAuth: {fileID: 1348699093}
+  PopUpAuthError: {fileID: 1961099774}
 --- !u!114 &1069704980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,10 +1063,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069704973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33cdc2f76fcaac04f93a4da98a3cdb1c, type: 3}
+  m_Script: {fileID: 11500000, guid: d4f5c00c7adae8343a039716827017ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1069704982
+--- !u!114 &1069704981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1060,24 +1075,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069704973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f0a61a681a11be479086b20a1cbb20a, type: 3}
+  m_Script: {fileID: 11500000, guid: daf73af1ce1b23843adbd7460b7185b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1069704983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069704973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad85e46a71fb0a459fd0bb595a21822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  authorizeButton: {fileID: 1355962626}
-  PopUpAuth: {fileID: 1348699093}
-  PopUpAuthError: {fileID: 1961099774}
 --- !u!1 &1148826674
 GameObject:
   m_ObjectHideFlags: 0
