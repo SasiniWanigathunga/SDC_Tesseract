@@ -3484,6 +3484,7 @@ MonoBehaviour:
     RandomSpawn: 1
     isSpawned: 0
   zombieCounter: {fileID: 0}
+  isPlayed: 0
 --- !u!1001 &901064361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4928,7 +4929,7 @@ GameObject:
   - component: {fileID: 1219592658}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4946,8 +4947,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 584758005}
+  bulletSource: {fileID: 0}
+  lawnMoverSource: {fileID: 0}
+  plantSource: {fileID: 0}
+  zombieDieSource: {fileID: 0}
+  zomibiesIncomingSource: {fileID: 0}
   background: {fileID: 8300000, guid: 2acece2ab2af7a24a832ca282544d968, type: 3}
   bullet: {fileID: 0}
+  lawnMover: {fileID: 0}
+  plant: {fileID: 0}
+  zombieDie: {fileID: 0}
+  zombiesIncoming: {fileID: 0}
 --- !u!4 &1219592659
 Transform:
   m_ObjectHideFlags: 0

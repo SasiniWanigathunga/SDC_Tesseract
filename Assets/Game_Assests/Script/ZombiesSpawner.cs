@@ -22,6 +22,13 @@ public class ZombiesSpawner: MonoBehaviour
     public List<GameObject> zombiesPrefabs;
     public List<Zombie> zombies;    
     public ZombieCount zombieCounter; // Reference to ZombieCount script
+    public bool isPlayed = false;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -36,8 +43,13 @@ public class ZombiesSpawner: MonoBehaviour
     {
         foreach (Zombie zombie in zombies )
         {
-            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime && GlobalManager_.Instance.UpdateScore == -3)
+            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime && GlobalManager_.Instance.UpdateScore == -3) //set to 0
             {
+                if (!isPlayed)
+                {
+                    audioManager.PlayZombiesIncoming(audioManager.zombiesIncoming);
+                    isPlayed = true;
+                }
                 if (zombie.RandomSpawn)
                 {
                     zombie.Spawner = Random.Range(0, transform.childCount);

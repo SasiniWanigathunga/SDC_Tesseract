@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource lawnMoverSource;
     [SerializeField] AudioSource plantSource;
     [SerializeField] AudioSource zombieDieSource;
+    [SerializeField] AudioSource zomibiesIncomingSource;
 
 
     [Header("----------Audio Clips-------------")]
@@ -19,6 +20,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip lawnMover;
     public AudioClip plant;
     public AudioClip zombieDie;
+    public AudioClip zombiesIncoming;
 
     private void Start()
     {
@@ -48,6 +50,12 @@ public class AudioManager : MonoBehaviour
     {
         zombieDieSource.clip = clip;
         zombieDieSource.Play();
+    }
+
+    public void PlayZombiesIncoming(AudioClip clip)
+    {
+        zomibiesIncomingSource.clip = clip;
+        zomibiesIncomingSource.Play();
     }
 
 }
