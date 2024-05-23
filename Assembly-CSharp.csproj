@@ -65,31 +65,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game_Assests\Script\SceneChangeManager_.cs" />
+    <Compile Include="Assets\Simple Buttons\DeletedScipts\ProfileManager.cs" />
+    <Compile Include="Assets\Simple Buttons\DeletedScipts\SceneChangeManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\QuestionnaireManager_.cs" />
-    <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\ObjectDragging.cs" />
     <Compile Include="Assets\Game_Assests\Script\ProfileManager_.cs" />
     <Compile Include="Assets\Game_Assests\Script\ZombiesSpawner.cs" />
+    <Compile Include="Assets\Game_Assests\Script\LawnMoverController.cs" />
     <Compile Include="Assets\Game_Assests\Script\GameManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\PlantController.cs" />
     <Compile Include="Assets\Game_Assests\Script\Zombie.cs" />
     <Compile Include="Assets\Game_Assests\Script\AuthenticationManager_.cs" />
+    <Compile Include="Assets\Simple Buttons\DeletedScipts\MenuManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\SpawnPoint.cs" />
+    <Compile Include="Assets\Game_Assests\Script\LawnMoverBullet.cs" />
     <Compile Include="Assets\Game_Assests\Script\ZombieCount.cs" />
     <Compile Include="Assets\Game_Assests\Script\ZombieController.cs" />
     <Compile Include="Assets\Game_Assests\Script\ObjectCard.cs" />
-    <Compile Include="Assets\Scripts\GlobalManager.cs" />
+    <Compile Include="Assets\Simple Buttons\DeletedScipts\QuestionnaireManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\GlobalManager_.cs" />
-    <Compile Include="Assets\Scripts\QuestionnaireManager.cs" />
-    <Compile Include="Assets\Scripts\AuthenticationManager.cs" />
+    <Compile Include="Assets\Simple Buttons\DeletedScipts\GlobalManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\GlobalVariable.cs" />
     <Compile Include="Assets\Game_Assests\Script\Bullet.cs" />
-    <Compile Include="Assets\Scripts\SceneChangeManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\ObjectContainer.cs" />
     <Compile Include="Assets\Game_Assests\Script\CreditCount_.cs" />
-    <Compile Include="Assets\Scripts\ProfileManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\MenuManager_.cs" />
     <Compile Include="Assets\Game_Assests\Script\Canvas_.cs" />
+    <Compile Include="Assets\Simple Buttons\DeletedScipts\AuthenticationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

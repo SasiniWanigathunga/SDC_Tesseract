@@ -13,10 +13,12 @@ public class CreditCount_ : MonoBehaviour
     public int creditCount = 0;
     public TMP_Text creditText;
     private string powerConsumptionUrl = "http://20.15.114.131:8080/api/power-consumption/current/view";
+    private string yearly_consumption_url = "http://20.15.114.131:8080/api/power-consumption/all/view";
     int cumulativeReward = 0;
 
     void Start()
     {
+        GlobalManager_.Instance.SetCreditConsumption(0);
         StartCoroutine(GetCurrentConsumptionAndUpdateScore());
     }
 
@@ -95,9 +97,7 @@ public class CreditCount_ : MonoBehaviour
                             }
 
                             cumulativeReward = rewardFromPast + rewardFromCurrentDay + varReward;
-                            Debug.Log("Cumulative reward: " + cumulativeReward);
-
-                            // Update creditCount and creditText
+                            Debug.Log("Cumulative reward: " + cumulativeReward);          
                             
                         }
                     }
@@ -148,6 +148,31 @@ public class CreditCount_ : MonoBehaviour
     int GetPastConsumption()
     {
         // Implement your logic here
+        using (UnityWebRequest request = UnityWebRequest.Get(yearly_consumption_url))
+        {
+            request.SetRequestHeader("accept", "*/*");
+            string jwtToken = GlobalManager_.Instance.JwtToken;
+            Debug.Log("JWT Token: " + jwtToken);
+            string authHeaderValue = "Bearer " + jwtToken;
+            Debug.Log("Authorization: " + authHeaderValue);
+            request.SetRequestHeader("Authorization", authHeaderValue);
+            request.SendWebRequest();
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Error: " + request.error);
+            }
+            else
+            {
+                string consumptionJson = request.downloadHandler.text;
+                Dictionary<string, object> consumptionData = JsonConvert.DeserializeObject<Dictionary<string, object>>(consumptionJson);
+                float currentConsumption_ =  Convert.ToSingle(consumptionData["currentConsumption"]);
+
+                int currentConsumption = (int)currentConsumption_;
+                return currentConsumption;
+            }
+        }
+
         return 0;
     }
 }

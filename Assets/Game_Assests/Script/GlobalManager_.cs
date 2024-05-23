@@ -9,6 +9,7 @@ public class GlobalManager_ : MonoBehaviour
     public int Score { get; private set; } // New global variable for the score
     public int CreditCount { get; private set; } // New global variable for the credit count
     public int CreditCosumption { get; private set; } // New global variable for the credit consumption
+    public int UpdateScore { get; private set; } // New global variable for the updated score
 
     private void Awake()
     {
@@ -45,5 +46,11 @@ public class GlobalManager_ : MonoBehaviour
     public void SetCreditConsumption(int consumption)
     {
         CreditCosumption = consumption;
+    }
+
+    // Method to set the updated score
+    public void SetUpdateScore(int updateScore)
+    {
+        UpdateScore = updateScore;
     }
 }

@@ -12,6 +12,7 @@ public class ObjectContainer : MonoBehaviour
     public void Start()
     {
         gameManager = GameManager.instance;
+        
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

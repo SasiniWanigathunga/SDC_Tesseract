@@ -20,12 +20,25 @@ public class GameManager : MonoBehaviour
 
     public void PlaceObject()
     {
-        if (draggingObject != null && currentContainer != null)
+        //int cardVal = draggingObject.GetComponent<ObjectDragging>().card.cardValue;
+        int cardVal = draggingObject.GetComponent<ObjectDragging>().cardValue;
+
+        if (draggingObject != null && currentContainer != null && cardVal == 2)
+        {
+            GameObject objectGame = Instantiate(draggingObject.GetComponent<ObjectDragging>().card.object_Game, currentContainer.transform);
+            objectGame.GetComponent<LawnMowerController>().zombies =currentContainer.GetComponent<ObjectContainer>().spawnPoint.zombies;
+            currentContainer.GetComponent<ObjectContainer>().isFull = true;
+
+            
+        }
+        else if (draggingObject != null && currentContainer != null)
         {
             GameObject objectGame = Instantiate(draggingObject.GetComponent<ObjectDragging>().card.object_Game, currentContainer.transform);
             objectGame.GetComponent<PlantController>().zombies =currentContainer.GetComponent<ObjectContainer>().spawnPoint.zombies;
             currentContainer.GetComponent<ObjectContainer>().isFull = true;
-
         }
+        
+
+        
     }
 }

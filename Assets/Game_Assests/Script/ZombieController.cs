@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,7 +54,14 @@ public class ZombieController : MonoBehaviour
         }
         else
         {
-            collision.gameObject.GetComponent<PlantController>().ReceiveDamage(damageValue);
+            try
+            {
+                collision.gameObject.GetComponent<PlantController>().ReceiveDamage(damageValue);
+            }
+            catch (NullReferenceException)
+            {
+                Debug.Log("No Plant to Attack");                
+            }
             yield return new WaitForSeconds(damageCoolDown);
             StartCoroutine(Attack(collision));
 

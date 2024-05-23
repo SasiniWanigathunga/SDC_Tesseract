@@ -36,7 +36,7 @@ public class ZombiesSpawner: MonoBehaviour
     {
         foreach (Zombie zombie in zombies )
         {
-            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime)
+            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime && GlobalManager_.Instance.UpdateScore == -3)
             {
                 if (zombie.RandomSpawn)
                 {

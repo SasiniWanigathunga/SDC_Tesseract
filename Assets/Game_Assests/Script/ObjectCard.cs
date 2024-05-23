@@ -11,10 +11,12 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public Canvas canvas;
     private GameObject objectDragInstance;
     private GameManager gameManager;
+    
 
     void Start()
     {
         gameManager = GameManager.instance;
+        GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.Score);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -36,9 +38,24 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerUp(PointerEventData eventData)
     {
         int cardVal = objectDragInstance.GetComponent<ObjectDragging>().cardValue;
-        if (GlobalManager_.Instance.CreditCount >= cardVal)
+
+        if (cardVal == 2 && GlobalManager_.Instance.UpdateScore > -3)
         {
-            Debug.Log("Dragging object cardValue: " + objectDragInstance.GetComponent<ObjectDragging>().cardValue);
+            Debug.Log("Update Score: " + GlobalManager_.Instance.UpdateScore);
+            gameManager.PlaceObject();
+            gameManager.draggingObject = null;
+            Destroy(objectDragInstance);
+            GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.UpdateScore - 1);
+            if (GlobalManager_.Instance.UpdateScore == -2)
+            {
+                GlobalVariable.Instance.SetElapsedTime(Time.time);;
+            }
+
+            
+        }        
+        else if (GlobalManager_.Instance.CreditCount >= cardVal && cardVal != 2)
+        {
+            Debug.Log("Placed");
             gameManager.PlaceObject();        
             GlobalManager_.Instance.SetCreditConsumption(GlobalManager_.Instance.CreditCosumption+cardVal);
             gameManager.draggingObject = null;
