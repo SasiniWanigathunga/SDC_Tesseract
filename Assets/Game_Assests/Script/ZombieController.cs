@@ -15,6 +15,12 @@ public class ZombieController : MonoBehaviour
     public float movemnetSpeed;
     private bool isStopped;
     public float damageCoolDown;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     
 
     // Update is called once per frame
@@ -75,6 +81,7 @@ public class ZombieController : MonoBehaviour
         if (Health - Damage <= 0)
         {
             transform.parent.GetComponent<SpawnPoint>().zombies.Remove(this.gameObject);
+            audioManager.PlayZombieDie(audioManager.zombieDie);
             Destroy(this.gameObject);
         }
         else

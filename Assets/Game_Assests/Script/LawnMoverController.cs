@@ -14,8 +14,14 @@ public class LawnMowerController : MonoBehaviour
     public int damageValue;
     public bool isAttacking;
     public int Health;
+    AudioManager audioManager;
 
     public bool collided = false;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Update()
     {
@@ -31,6 +37,7 @@ public class LawnMowerController : MonoBehaviour
         {
             if (Time.time - GlobalVariable.instance.elapsedTime >= attackTime )
             {
+                audioManager.PlayLawnMover(audioManager.lawnMover);
                 GameObject bulletInstance = Instantiate(bullet, transform);
                 bulletInstance.GetComponent<LawnMoverBullet>().damageValue = damageValue;               
                 this.gameObject.GetComponent<Image>().enabled = false;

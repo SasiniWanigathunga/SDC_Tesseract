@@ -12,6 +12,12 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public Canvas canvas;
     private GameObject objectDragInstance;
     private GameManager gameManager;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
 
     void Start()
@@ -57,6 +63,7 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
         else if (GlobalManager_.Instance.CreditCount >= cardVal && cardVal != 2)
         {
             Debug.Log("Placed");
+            audioManager.PlayPlant(audioManager.plant);
             gameManager.PlaceObject();
             GlobalManager_.Instance.SetCreditConsumption(GlobalManager_.Instance.CreditCosumption + cardVal);
             gameManager.draggingObject = null;

@@ -12,6 +12,12 @@ public class PlantController : MonoBehaviour
     public int damageValue;
     public bool isAttacking;
     public int Health;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Update()
     {
@@ -36,6 +42,7 @@ public class PlantController : MonoBehaviour
         {
             if (Time.time - GlobalVariable.instance.elapsedTime >= attackTime )
             {
+                audioManager.PlayBullet(audioManager.bullet);
                 GameObject bulletInstance = Instantiate(bullet, transform);
                 bulletInstance.GetComponent<Bullet>().damageValue = damageValue;
                 attackTime = Time.time - GlobalVariable.instance.elapsedTime + attackCoolDown;

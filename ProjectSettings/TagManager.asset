@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zombie_tag
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Object
   - Zombie
   - Bullet
-  - 
+  - LawnMover
   - 
   - 
   - 

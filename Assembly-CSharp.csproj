@@ -74,6 +74,7 @@
     <Compile Include="Assets\Game_Assests\Script\LawnMoverController.cs" />
     <Compile Include="Assets\Game_Assests\Script\GameManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\PlantController.cs" />
+    <Compile Include="Assets\Game_Assests\Script\AudioManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\Zombie.cs" />
     <Compile Include="Assets\Game_Assests\Script\AuthenticationManager_.cs" />
     <Compile Include="Assets\Simple Buttons\DeletedScipts\MenuManager.cs" />
