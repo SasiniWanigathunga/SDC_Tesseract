@@ -20,22 +20,8 @@ public class LawnMowerController : MonoBehaviour
     private void Update()
     {
         if (zombies.Count > 0 && collided)
-        {
-            float distance =3000;
-            //to attack last zombie in the list
-            toAttack = zombies[0];
-            
-
-            
-            // foreach(GameObject zombie in zombies)
-            // {
-            //     float zombieDistance = Vector3.Distance(transform.position, zombie.transform.position);
-            //     if (zombieDistance < distance)
-            //     {
-            //         distance = zombieDistance;
-            //         toAttack = zombie;
-            //     }
-            // }
+        {            //to attack last zombie in the list
+            toAttack = zombies[0];            
         }
         else
         {

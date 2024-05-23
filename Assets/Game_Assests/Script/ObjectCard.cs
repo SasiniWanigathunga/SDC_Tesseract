@@ -7,15 +7,17 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 {
     public GameObject object_Drag;
     public GameObject object_Game;
+    public GameObject InstructionObject;
     // Start is called before the first frame update
     public Canvas canvas;
     private GameObject objectDragInstance;
     private GameManager gameManager;
-    
+
 
     void Start()
     {
         gameManager = GameManager.instance;
+        InstructionObject.SetActive(true);
         GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.Score);
     }
 
@@ -30,7 +32,7 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
         objectDragInstance = Instantiate(object_Drag, canvas.transform);
         objectDragInstance.transform.position = Input.mousePosition;
         objectDragInstance.GetComponent<ObjectDragging>().card = this;
-        
+
 
         gameManager.draggingObject = objectDragInstance;
     }
@@ -46,21 +48,20 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
             gameManager.draggingObject = null;
             Destroy(objectDragInstance);
             GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.UpdateScore - 1);
-            if (GlobalManager_.Instance.UpdateScore == -2)                              // if the global variable updates correctly change this to 1
+            if (GlobalManager_.Instance.UpdateScore == -3)                              // if the global variable updates correctly change this to 0
             {
-                GlobalVariable.Instance.SetElapsedTime(Time.time);;
+                GlobalVariable.Instance.SetElapsedTime(Time.time);
+                InstructionObject.SetActive(false);
             }
-
-            
-        }        
+        }
         else if (GlobalManager_.Instance.CreditCount >= cardVal && cardVal != 2)
         {
             Debug.Log("Placed");
-            gameManager.PlaceObject();        
-            GlobalManager_.Instance.SetCreditConsumption(GlobalManager_.Instance.CreditCosumption+cardVal);
+            gameManager.PlaceObject();
+            GlobalManager_.Instance.SetCreditConsumption(GlobalManager_.Instance.CreditCosumption + cardVal);
             gameManager.draggingObject = null;
             Destroy(objectDragInstance);
-        }            
+        }
         else
         {
             Destroy(objectDragInstance);
