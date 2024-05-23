@@ -39,14 +39,14 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     {
         int cardVal = objectDragInstance.GetComponent<ObjectDragging>().cardValue;
 
-        if (cardVal == 2 && GlobalManager_.Instance.UpdateScore > -3)
+        if (cardVal == 2 && GlobalManager_.Instance.UpdateScore > -3)                  // if the global variable updates correctly change this to 0
         {
             Debug.Log("Update Score: " + GlobalManager_.Instance.UpdateScore);
             gameManager.PlaceObject();
             gameManager.draggingObject = null;
             Destroy(objectDragInstance);
             GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.UpdateScore - 1);
-            if (GlobalManager_.Instance.UpdateScore == -2)
+            if (GlobalManager_.Instance.UpdateScore == -2)                              // if the global variable updates correctly change this to 1
             {
                 GlobalVariable.Instance.SetElapsedTime(Time.time);;
             }
