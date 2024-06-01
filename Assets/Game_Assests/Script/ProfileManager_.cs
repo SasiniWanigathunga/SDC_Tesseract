@@ -48,8 +48,6 @@ public class ProfileManager_ : MonoBehaviour
         emailInput = GameObject.Find("Canvas2/EmailAddress/EmailAddress_Input").GetComponent<TMP_InputField>();
         demandResponseToggle = GameObject.Find("Canvas2/Demand/Demand_Input").GetComponent<Toggle>();
 
-        popUpAuthError_Text = GameObject.Find("Canvas2/PopUpAuthError/PopUpAuthError_Text").GetComponent<TMP_Text>();
-
         //Hide Pop Up panels initially
         PopUpAuthError.SetActive(false);
         PopUpAuth.SetActive(false);
