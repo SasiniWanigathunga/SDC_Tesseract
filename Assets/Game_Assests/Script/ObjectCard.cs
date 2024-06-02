@@ -24,7 +24,8 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     {
         gameManager = GameManager.instance;
         InstructionObject.SetActive(true);
-        GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.Score);
+        int lawnMowers = Mathf.FloorToInt(GlobalManager_.Instance.Score / 2);
+        GlobalManager_.Instance.SetUpdateScore(lawnMowers);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -47,14 +48,14 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     {
         int cardVal = objectDragInstance.GetComponent<ObjectDragging>().cardValue;
 
-        if (cardVal == 2 && GlobalManager_.Instance.UpdateScore > -3)                  // if the global variable updates correctly change this to 0
+        if (cardVal == 2 && GlobalManager_.Instance.UpdateScore > 0)                  // if the global variable updates correctly change this to 0
         {
             Debug.Log("Update Score: " + GlobalManager_.Instance.UpdateScore);
             gameManager.PlaceObject();
             gameManager.draggingObject = null;
             Destroy(objectDragInstance);
             GlobalManager_.Instance.SetUpdateScore(GlobalManager_.Instance.UpdateScore - 1);
-            if (GlobalManager_.Instance.UpdateScore == -3)                              // if the global variable updates correctly change this to 0
+            if (GlobalManager_.Instance.UpdateScore == 0)                              // if the global variable updates correctly change this to 0
             {
                 GlobalVariable.Instance.SetElapsedTime(Time.time);
                 InstructionObject.SetActive(false);
