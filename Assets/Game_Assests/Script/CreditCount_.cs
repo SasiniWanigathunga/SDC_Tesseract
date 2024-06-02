@@ -37,8 +37,11 @@ public class CreditCount_ : MonoBehaviour
         DateTime now = DateTime.Now;
 
         // Print the current date
+        int year = now.Year;
+        int month = now.Month;
+        int day = now.Day;
         
-        Debug.Log("Current date: " + now.ToString("yyyy-MM-dd"));
+        Debug.Log("Current date: " + year + "-" + month + "-" + day);
 
         using (UnityWebRequest all_request = UnityWebRequest.Get(yearly_consumption_url))
         {
@@ -62,16 +65,24 @@ public class CreditCount_ : MonoBehaviour
                 // Now you can access your data as a dictionary, for example:
                 foreach (var yearlyData in deserializedResponse.yearlyPowerConsumptionViews)
                 {
-                    Debug.Log("Year: " + yearlyData.year);
-                    foreach (var monthData in yearlyData.units)
-                    {
-                        Debug.Log(monthData.Key + ": " + monthData.Value.units);
+                        Debug.Log("Year: " + yearlyData.year);
+                    if (yearlyData.year <= year){
+                        int counter_var = 1;
+                        foreach (var monthData in yearlyData.units)
+                        {
+                            if (counter_var >= month && yearlyData.year == year){
+                                break;
+                            }
+                            Debug.Log(monthData.Key + ": " + monthData.Value.units);
+                            pastConsumption += (int)monthData.Value.units;
+                            counter_var++;
+                        }
                     }
                 }
             } 
         
 
-            int rewardFromPast = (int)(100000 / (1000 + pastConsumption));
+            int rewardFromPast = (int)(1000000 / (1000 + pastConsumption));
             Debug.Log("Reward from past: " + rewardFromPast);
 
 
@@ -129,7 +140,7 @@ public class CreditCount_ : MonoBehaviour
 
                                 if (consumptionDifference < 0.5)
                                 {
-                                    varReward++;
+                                    varReward = varReward + 100;
                                 }
 
                                 cumulativeReward = rewardFromPast + rewardFromCurrentDay + varReward;
