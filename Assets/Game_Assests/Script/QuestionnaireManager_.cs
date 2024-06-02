@@ -63,7 +63,10 @@ public class QuestionnaireManager_ : MonoBehaviour
                 // Add your code here to handle the score if needed
 
                 // Set the score in the GlobalManager
+                Debug.Log("Quiz Attempted:" + GlobalManager_.Instance.QuizAttempted);
                 GlobalManager_.Instance.SetScore(score);
+                GlobalManager_.Instance.SetQuizAttempted(true);
+                Debug.Log("Quiz Attempted: " + GlobalManager_.Instance.QuizAttempted);
             }
             else
             {

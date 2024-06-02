@@ -7,6 +7,8 @@ public class GlobalManager_ : MonoBehaviour
     public static GlobalManager_ Instance { get; private set; }
     public string JwtToken { get; private set; }  // JWT token for authentication
     public int Score { get; private set; } // New global variable for the score
+    public bool QuizAttempted { get; private set; } // New global variable for the quiz attempted status
+
     public int CreditCount { get; private set; } // New global variable for the credit count
     public int CreditCosumption { get; private set; } // New global variable for the credit consumption
     public int UpdateScore { get; private set; } // New global variable for the updated score
@@ -17,6 +19,7 @@ public class GlobalManager_ : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // Keep the instance alive across scenes
+            QuizAttempted = false; // Set the quiz attempted status to false
         }
         else if (Instance != this)
         {
@@ -34,6 +37,11 @@ public class GlobalManager_ : MonoBehaviour
     public void SetScore(int score)
     {
         Score = score;
+    }
+
+    public void SetQuizAttempted(bool quizattempted)
+    {
+        QuizAttempted = quizattempted;
     }
 
     // Method to set the credit count
