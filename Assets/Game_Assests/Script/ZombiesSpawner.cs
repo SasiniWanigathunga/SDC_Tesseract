@@ -43,7 +43,7 @@ public class ZombiesSpawner: MonoBehaviour
     {
         foreach (Zombie zombie in zombies )
         {
-            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime && GlobalManager_.Instance.UpdateScore == -3) //set to 0
+            if (zombie.isSpawned == false && zombie.spawnTime <= Time.time-GlobalVariable.Instance.elapsedTime && GlobalManager_.Instance.UpdateScore == 0) //set to 0
             {
                 if (!isPlayed)
                 {

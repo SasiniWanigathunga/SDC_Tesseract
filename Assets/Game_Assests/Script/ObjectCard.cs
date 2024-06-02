@@ -26,6 +26,11 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
         InstructionObject.SetActive(true);
         int lawnMowers = Mathf.FloorToInt(GlobalManager_.Instance.Score / 2);
         GlobalManager_.Instance.SetUpdateScore(lawnMowers);
+        if (GlobalManager_.Instance.UpdateScore == 0)
+        {
+            GlobalVariable.Instance.SetElapsedTime(Time.time);
+            InstructionObject.SetActive(false);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
