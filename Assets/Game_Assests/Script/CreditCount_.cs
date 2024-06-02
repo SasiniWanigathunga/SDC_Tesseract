@@ -34,7 +34,10 @@ public class CreditCount_ : MonoBehaviour
     
     IEnumerator GetCurrentConsumptionAndUpdateScore()
     {
-        int pastConsumption = 0; // Implement your logic here
+        int avg_monthly_consumption = 0;
+        int avg_daily_consumption = 0;
+        int  rewardFromCurrentDay = 0;
+        int varReward = 0;
         DateTime now = DateTime.Now;
 
         // Print the current date
@@ -48,12 +51,11 @@ public class CreditCount_ : MonoBehaviour
         {
             all_request.SetRequestHeader("accept", "*/*");
             string jwtToken = GlobalManager_.Instance.JwtToken;
-            Debug.Log("JWT Token: " + jwtToken);
             string authHeaderValue = "Bearer " + jwtToken;
-            Debug.Log("Authorization: " + authHeaderValue);
             all_request.SetRequestHeader("Authorization", authHeaderValue);
             yield return all_request.SendWebRequest();
-            
+            int total_months = 0;
+            int pastConsumption = 0;
             if (all_request.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log("Past_Consumption_API_is"+all_request.error);
@@ -64,9 +66,9 @@ public class CreditCount_ : MonoBehaviour
                 Root deserializedResponse = JsonConvert.DeserializeObject<Root>(response);
 
                 // Now you can access your data as a dictionary, for example:
+                
                 foreach (var yearlyData in deserializedResponse.yearlyPowerConsumptionViews)
                 {
-                        Debug.Log("Year: " + yearlyData.year);
                     if (yearlyData.year <= year){
                         int counter_var = 1;
                         foreach (var monthData in yearlyData.units)
@@ -74,17 +76,18 @@ public class CreditCount_ : MonoBehaviour
                             if (counter_var >= month && yearlyData.year == year){
                                 break;
                             }
-                            Debug.Log(monthData.Key + ": " + monthData.Value.units);
                             pastConsumption += (int)monthData.Value.units;
                             counter_var++;
+                            total_months++;
                         }
                     }
                 }
             } 
         
 
-            int rewardFromPast = (int)(1000000 / (1000 + pastConsumption));
-            Debug.Log("Reward from past: " + rewardFromPast);
+            
+            avg_monthly_consumption = pastConsumption / total_months;
+            Debug.Log("Average Monthly Consumption since last year: " + avg_monthly_consumption);
 
             using (UnityWebRequest daily_request = UnityWebRequest.Get(daily_consumption_url))
             {
@@ -98,7 +101,6 @@ public class CreditCount_ : MonoBehaviour
                 else
                 {
                     string dailyJsonText = daily_request.downloadHandler.text;
-                    Debug.Log("Daily consumption: " + dailyJsonText);
                     Dictionary<string, DailyPowerConsumptionView> dailyPowerConsumptionDict = JsonConvert.DeserializeObject<Dictionary<string, DailyPowerConsumptionView>>(dailyJsonText);
 
                     // Extract dailyUnits data
@@ -114,10 +116,8 @@ public class CreditCount_ : MonoBehaviour
                         accumulatedDailyConsumption += (int)dailyUnit.Value;
                         counter++;
                     }
-                    //DailyPowerConsumptionView dailyPowerConsumptionView_ = dailyPowerConsumptionViewRoot.dailyPowerConsumptionViews;
-                    //Debug.Log("Daily consumption view: " + dailyPowerConsumptionView_.year);
-                    //Dictionary<string, float> dailyUnits = dailyPowerConsumptionView.dailyUnits;
-                    // Debug.Log("Daily units: " + dailyUnits);
+                    avg_daily_consumption = accumulatedDailyConsumption / counter;
+                    Debug.Log("Average daily consumption: " + avg_daily_consumption);
                                 
                 }
                 
@@ -138,10 +138,15 @@ public class CreditCount_ : MonoBehaviour
                         Dictionary<string, object> consumptionData = JsonConvert.DeserializeObject<Dictionary<string, object>>(consumptionJson);
                         float currentConsumption_ =  Convert.ToSingle(consumptionData["currentConsumption"]);
                         int currentConsumption = (int)currentConsumption_;
-                        int rewardFromCurrentDay = 100000 / (1000 + currentConsumption);
-                        Debug.Log("Reward from current: " + rewardFromCurrentDay);
 
-                        int varReward = 0;
+                        DateTime now_ = DateTime.Now; 
+                        DateTime startOfDay = now_.Date;
+                        TimeSpan elapsedTime = now_ - startOfDay;
+                        int elapsedMinutes = (int)elapsedTime.TotalMinutes;
+                        rewardFromCurrentDay = currentConsumption/elapsedMinutes;
+                        Debug.Log("Average reward from current day: " + rewardFromCurrentDay);
+
+                        
                         for (int c = 0; c <= 6; c++)
                         {                            
                             using (UnityWebRequest realtimeRequest = UnityWebRequest.Get(powerConsumptionUrl))
@@ -169,7 +174,7 @@ public class CreditCount_ : MonoBehaviour
                                         varReward = varReward + 100;
                                     }
 
-                                    cumulativeReward = rewardFromPast + rewardFromCurrentDay + varReward;
+                                    cumulativeReward = avg_monthly_consumption + avg_daily_consumption + rewardFromCurrentDay + varReward;
                                     Debug.Log("Cumulative reward: " + cumulativeReward);          
                                     
                                 }
