@@ -3437,8 +3437,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: QuestionnaireManager, Assembly-CSharp
+      - m_Target: {fileID: 2080941748}
+        m_TargetAssemblyTypeName: QuestionnaireManager_, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
