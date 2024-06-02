@@ -120,7 +120,7 @@ public class CreditCount_ : MonoBehaviour
                     // Debug.Log("Daily units: " + dailyUnits);
                                 
                 }
-                accumulatedDailyConsumption = (int)(accumulatedDailyConsumption / day);
+                
 
                 using (UnityWebRequest request = UnityWebRequest.Get(powerConsumptionUrl))
                 {
