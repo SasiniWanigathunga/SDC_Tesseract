@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class PlayAccessManager : MonoBehaviour
 {
     public Button playButton;
-    public Button playCloseButton;
     public GameObject PopUpPlay;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,6 @@ public class PlayAccessManager : MonoBehaviour
         PopUpPlay.SetActive(false);
 
     }
-
 
     public void ChangetoPreGameScene()
     {
@@ -34,15 +32,6 @@ public class PlayAccessManager : MonoBehaviour
         else
         {
             PopUpPlay.SetActive(true);
-            GameObject.Find("PopUpPlay_Close").GetComponent<Button>().onClick.AddListener(PopUpPlayClose);
-
-
         }
     }
-
-    void PopUpPlayClose()
-    {
-        PopUpPlay.SetActive(false);
-    }
-
 }
