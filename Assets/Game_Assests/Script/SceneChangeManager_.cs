@@ -27,7 +27,7 @@ public class SceneChangeManager_ : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
         GlobalVariable.Instance.SetElapsedTime(Time.time);
-        
+        GlobalVariable.Instance.SetIsLost(false);
     }
 
     public void ChangetoPreGameScene()
