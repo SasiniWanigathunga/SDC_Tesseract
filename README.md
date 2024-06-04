@@ -4,6 +4,7 @@
 -- Insert data into the question table
 INSERT INTO question (question_id, option1, option2, option3, option4, question_title, feedback1, feedback2, feedback3, feedback4, general_feedback, right_answer_index)
 VALUES
+
     -- Question 1
     (1, 'Solar power', 'Wind power', 'Fossil fuels', 'Hydropower', 'What is the primary source of energy for most power grids around the world?', 
     'Solar power is growing but is not the primary source globally.', 
