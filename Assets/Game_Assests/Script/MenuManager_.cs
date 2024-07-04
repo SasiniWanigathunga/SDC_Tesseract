@@ -11,10 +11,10 @@ public class MenuManager_ : MonoBehaviour
 
     void Start()
     {
-        profileButton.onClick.AddListener(PopUpCanvas);
+        profileButton.onClick.AddListener(PopUpCanvasProfile);
     }
     
-    void PopUpCanvas()
+    void PopUpCanvasProfile()
     {
         canvas2.SetActive(true);
         profileManager.FetchProfile();

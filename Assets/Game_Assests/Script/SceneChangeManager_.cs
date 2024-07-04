@@ -34,4 +34,9 @@ public class SceneChangeManager_ : MonoBehaviour
     {
         SceneManager.LoadScene("Pre_GameScene");
     }
+
+    public void ChangetoLeaderboardScene()
+    {
+        SceneManager.LoadScene("LeaderboardScene");
+    }
 }

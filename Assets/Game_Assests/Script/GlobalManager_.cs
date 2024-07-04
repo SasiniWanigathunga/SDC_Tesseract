@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class UserView
+    {
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Username { get; set; }
+        public object Nic { get; set; }
+        public object PhoneNumber { get; set; }
+        public object Email { get; set; }
+        public object Score { get; set; }
+    }
+
 public class GlobalManager_ : MonoBehaviour
 {
     public static GlobalManager_ Instance { get; private set; }
@@ -12,6 +23,8 @@ public class GlobalManager_ : MonoBehaviour
     public int CreditCount { get; private set; } // New global variable for the credit count
     public int CreditCosumption { get; private set; } // New global variable for the credit consumption
     public int UpdateScore { get; private set; } // New global variable for the updated score
+
+    public List<UserView> UserViews { get; set; } // New global variable for the user views
 
     private void Awake()
     {
@@ -60,5 +73,11 @@ public class GlobalManager_ : MonoBehaviour
     public void SetUpdateScore(int updateScore)
     {
         UpdateScore = updateScore;
+    }
+
+    // Method to set the user views
+    public void SetUserViews(List<UserView> userViews)
+    {
+        UserViews = userViews;
     }
 }
