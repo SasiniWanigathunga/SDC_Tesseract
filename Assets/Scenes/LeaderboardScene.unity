@@ -571,7 +571,6 @@ GameObject:
   - component: {fileID: 325887661}
   - component: {fileID: 325887660}
   - component: {fileID: 325887659}
-  - component: {fileID: 325887664}
   m_Layer: 5
   m_Name: CanvasAllPlayers
   m_TagString: Untagged
@@ -668,20 +667,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &325887664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325887656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d45b71b5ec43d428f73741421ccc65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ContentContainer: {fileID: 1161912203}
-  userPrefab: {fileID: 9065851383211180097, guid: 7be6f7232e0b0d846b0aaad9a9768fe1, type: 3}
 --- !u!1 &343548132
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,8 +974,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1110539202}
-        m_TargetAssemblyTypeName: LeaderboardManager, Assembly-CSharp
+      - m_Target: {fileID: 1110539206}
+        m_TargetAssemblyTypeName: OnClick_Refresh_Top5, Assembly-CSharp
         m_MethodName: FetchUserProfiles
         m_Mode: 1
         m_Arguments:
@@ -2455,17 +2440,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 325887656}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1110539204}
+        m_TargetAssemblyTypeName: OnClick_AllPlayers, Assembly-CSharp
+        m_MethodName: FetchUserProfiles
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1070477069
 MonoBehaviour:
@@ -2519,6 +2504,9 @@ GameObject:
   - component: {fileID: 1110539198}
   - component: {fileID: 1110539202}
   - component: {fileID: 1110539203}
+  - component: {fileID: 1110539206}
+  - component: {fileID: 1110539205}
+  - component: {fileID: 1110539204}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2632,16 +2620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6403b51a596dd2a45871b9ce579e8f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstPlaceUser: {fileID: 1421482707}
-  FirstPlaceScore: {fileID: 1386740306}
-  SecondPlaceUser: {fileID: 815186358}
-  SecondPlaceScore: {fileID: 1736318785}
-  ThirdPlaceUser: {fileID: 1318270363}
-  ThirdPlaceScore: {fileID: 1925044685}
-  FourthPlaceUser: {fileID: 919685223}
-  FourthPlaceScore: {fileID: 504892196}
-  FifthPlaceUser: {fileID: 1286379959}
-  FifthPlaceScore: {fileID: 62715399}
 --- !u!114 &1110539203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,6 +2632,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dbc4f90b871cf4fadcf84e16275e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1110539204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110539197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907aacf682737094cae78fcfb48fd6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboard_canvas: {fileID: 325887656}
+  leaderboardManager: {fileID: 1110539202}
+  populateScrollView: {fileID: 1110539205}
+--- !u!114 &1110539205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110539197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d45b71b5ec43d428f73741421ccc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ContentContainer: {fileID: 1161912203}
+  userPrefab: {fileID: 9065851383211180097, guid: 7be6f7232e0b0d846b0aaad9a9768fe1, type: 3}
+--- !u!114 &1110539206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110539197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df90f42e197fa1458d193263086c7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboardManager: {fileID: 1110539202}
+  FirstPlaceUser: {fileID: 1421482707}
+  FirstPlaceScore: {fileID: 1386740306}
+  SecondPlaceUser: {fileID: 815186358}
+  SecondPlaceScore: {fileID: 1736318785}
+  ThirdPlaceUser: {fileID: 1318270363}
+  ThirdPlaceScore: {fileID: 1925044685}
+  FourthPlaceUser: {fileID: 919685223}
+  FourthPlaceScore: {fileID: 504892196}
+  FifthPlaceUser: {fileID: 1286379959}
+  FifthPlaceScore: {fileID: 62715399}
 --- !u!1 &1136151968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,7 +3654,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1338314410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1110539202}
+        m_TargetAssemblyTypeName: LeaderboardManager, Assembly-CSharp
+        m_MethodName: FetchUserProfiles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1338314410
 MonoBehaviour:
   m_ObjectHideFlags: 0

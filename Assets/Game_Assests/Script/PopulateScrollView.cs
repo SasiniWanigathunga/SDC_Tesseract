@@ -8,7 +8,7 @@ public class PopulateScrollView : MonoBehaviour
     [SerializeField] private Transform m_ContentContainer;
     [SerializeField] private GameObject userPrefab;
 
-    void Start()
+    public void ScrollView()
     {
         for(int i = 0; i < 30; i++)
         {

@@ -4945,9 +4945,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137654911}
-        m_TargetAssemblyTypeName: SceneChangeManager_, Assembly-CSharp
-        m_MethodName: ChangetoLeaderboardScene
+      - m_Target: {fileID: 2137654914}
+        m_TargetAssemblyTypeName: OnClick_LeaderboardButton, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11728,6 +11728,8 @@ GameObject:
   - component: {fileID: 2137654913}
   - component: {fileID: 2137654912}
   - component: {fileID: 2137654911}
+  - component: {fileID: 2137654915}
+  - component: {fileID: 2137654914}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -11868,6 +11870,32 @@ MonoBehaviour:
   profileButton: {fileID: 2056239223}
   canvas2: {fileID: 2080941743}
   profileManager: {fileID: 2080941749}
+--- !u!114 &2137654914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137654906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533f34b3356bd654c9674753bf447f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneChangeManager: {fileID: 2137654911}
+  leaderboardManager: {fileID: 2137654915}
+--- !u!114 &2137654915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137654906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6403b51a596dd2a45871b9ce579e8f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

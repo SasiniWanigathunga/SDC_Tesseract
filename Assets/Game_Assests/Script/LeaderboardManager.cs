@@ -10,18 +10,6 @@ using System.Linq;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    // Text fields for displaying leaderboard data
-    public TMP_Text FirstPlaceUser;
-    public TMP_Text FirstPlaceScore;
-    public TMP_Text SecondPlaceUser;
-    public TMP_Text SecondPlaceScore;
-    public TMP_Text ThirdPlaceUser;
-    public TMP_Text ThirdPlaceScore;
-    public TMP_Text FourthPlaceUser;
-    public TMP_Text FourthPlaceScore;
-    public TMP_Text FifthPlaceUser;
-    public TMP_Text FifthPlaceScore;
-
     // Fetch player profile from the server
     public void FetchUserProfiles()
     {
@@ -70,17 +58,20 @@ public class LeaderboardManager : MonoBehaviour
                 {
                     int score = random.Next(1, 101); // Generate a random score between 1 and 100
 
-                    int ourscore = 98;
+                    // get ourscore from GlobalManager
+                    int ourscore = GlobalManager_.Instance.LeaderboardScore;
+                    
                     if (user.Username == "oversight_g15")
                     {
                         user.Score = ourscore;
+                        Debug.Log("Oversight's score: " + user.Score);
                     }
                     else 
                     {
                         user.Score = score;
                     }
 
-                    Debug.Log("User " + i + ": " + user.Username + " - " + user.Score);
+                    // Debug.Log("User " + i + ": " + user.Username + " - " + user.Score);
                     i++;
                 }
                 
@@ -91,18 +82,6 @@ public class LeaderboardManager : MonoBehaviour
 
                 // create a global variable to store the userViews
                 GlobalManager_.Instance.SetUserViews(userViews);
-
-                // Display the top 5 users in the leaderboard
-                FirstPlaceUser.text = userViews[0].Username;
-                FirstPlaceScore.text = userViews[0].Score.ToString();
-                SecondPlaceUser.text = userViews[1].Username;
-                SecondPlaceScore.text = userViews[1].Score.ToString();
-                ThirdPlaceUser.text = userViews[2].Username;
-                ThirdPlaceScore.text = userViews[2].Score.ToString();
-                FourthPlaceUser.text = userViews[3].Username;
-                FourthPlaceScore.text = userViews[3].Score.ToString();
-                FifthPlaceUser.text = userViews[4].Username;
-                FifthPlaceScore.text = userViews[4].Score.ToString();
             }
             else
             {
