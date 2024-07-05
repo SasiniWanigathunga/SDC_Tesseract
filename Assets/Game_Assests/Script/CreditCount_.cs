@@ -147,7 +147,7 @@ public class CreditCount_ : MonoBehaviour
                         Debug.Log("Average reward from current day: " + rewardFromCurrentDay);
 
                         
-                        for (int c = 0; c <= 6; c++)
+                        for (int c = 0; c <= 15; c++)
                         {                            
                             using (UnityWebRequest realtimeRequest = UnityWebRequest.Get(powerConsumptionUrl))
                             {

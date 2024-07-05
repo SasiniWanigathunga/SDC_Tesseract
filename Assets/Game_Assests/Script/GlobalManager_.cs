@@ -24,6 +24,8 @@ public class GlobalManager_ : MonoBehaviour
     public int CreditCosumption { get; private set; } // New global variable for the credit consumption
     public int UpdateScore { get; private set; } // New global variable for the updated score
 
+    public int LeaderboardScore { get; private set; } // New global variable for the leaderboard score
+
     public List<UserView> UserViews { get; set; } // New global variable for the user views
 
     private void Awake()
@@ -79,5 +81,10 @@ public class GlobalManager_ : MonoBehaviour
     public void SetUserViews(List<UserView> userViews)
     {
         UserViews = userViews;
+    }
+
+    public void SetLeaderboardScore(int leaderboardScore)
+    {
+        LeaderboardScore = leaderboardScore;
     }
 }
