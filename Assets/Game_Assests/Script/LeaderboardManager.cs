@@ -61,6 +61,8 @@ public class LeaderboardManager : MonoBehaviour
                 // Create a new Random object
                 System.Random random = new System.Random();
 
+                string our_username = GlobalManager_.Instance.Username;
+
                 // Iterate over the userViews list and print each user's first name
                 foreach (UserView user in userViews)
                 {
@@ -68,7 +70,6 @@ public class LeaderboardManager : MonoBehaviour
 
                     // get ourscore from GlobalManager
                     int ourscore = GlobalManager_.Instance.LeaderboardScore;
-                    string our_username = GlobalManager_.Instance.Username;
                     
                     if (user.Username == our_username)
                     {
@@ -91,6 +92,10 @@ public class LeaderboardManager : MonoBehaviour
 
                 // create a global variable to store the userViews
                 GlobalManager_.Instance.SetUserViews(userViews);
+
+                // Set the leaderboard rank
+                int leaderboardRank = userViews.FindIndex(user => user.Username == our_username) + 1;
+                GlobalManager_.Instance.SetLeaderboardRank(leaderboardRank);
 
                 areuserprofilesloaded = true;
             }

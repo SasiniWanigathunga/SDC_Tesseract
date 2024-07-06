@@ -62,6 +62,7 @@
     <Compile Include="Assets\Game_Assests\Script\SceneChangeManager_.cs" />
     <Compile Include="Assets\Simple Buttons\DeletedScipts\ProfileManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\PlayAccessManager.cs" />
+    <Compile Include="Assets\Game_Assests\Script\OnClick_Profile.cs" />
     <Compile Include="Assets\Game_Assests\Script\OnClick_Authorized.cs" />
     <Compile Include="Assets\Simple Buttons\DeletedScipts\SceneChangeManager.cs" />
     <Compile Include="Assets\Game_Assests\Script\QuestionnaireManager_.cs" />

@@ -28,6 +28,7 @@ public class GlobalManager_ : MonoBehaviour
 
     public List<UserView> UserViews { get; set; } // New global variable for the user views
     public string Username { get; private set; } // New global variable for the username
+    public int LeaderboardRank { get; private set; } // New global variable for the leaderboard rank
 
     private void Awake()
     {
@@ -93,5 +94,10 @@ public class GlobalManager_ : MonoBehaviour
     public void SetLeaderboardScore(int leaderboardScore)
     {
         LeaderboardScore = leaderboardScore;
+    }
+
+    public void SetLeaderboardRank(int leaderboardRank)
+    {
+        LeaderboardRank = leaderboardRank;
     }
 }
