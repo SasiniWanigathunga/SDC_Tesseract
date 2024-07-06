@@ -27,6 +27,7 @@ public class GlobalManager_ : MonoBehaviour
     public int LeaderboardScore { get; private set; } // New global variable for the leaderboard score
 
     public List<UserView> UserViews { get; set; } // New global variable for the user views
+    public string Username { get; private set; } // New global variable for the username
 
     private void Awake()
     {
@@ -46,6 +47,12 @@ public class GlobalManager_ : MonoBehaviour
     public void SetJwtToken(string token)
     {
         JwtToken = token;
+    }
+
+    //Method to set username
+    public void SetUsername(string username)
+    {
+        Username = username;
     }
 
     // Method to set the player's score

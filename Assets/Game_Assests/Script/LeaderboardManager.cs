@@ -15,6 +15,7 @@ public class LeaderboardManager : MonoBehaviour
     // Fetch player profile from the server
     public void FetchUserProfiles()
     {
+        areuserprofilesloaded = false;
         StartCoroutine(FetchProfiles());
     }
 
@@ -67,8 +68,9 @@ public class LeaderboardManager : MonoBehaviour
 
                     // get ourscore from GlobalManager
                     int ourscore = GlobalManager_.Instance.LeaderboardScore;
+                    string our_username = GlobalManager_.Instance.Username;
                     
-                    if (user.Username == "oversight_g15")
+                    if (user.Username == our_username)
                     {
                         user.Score = ourscore;
                         Debug.Log("Oversight's score: " + user.Score);

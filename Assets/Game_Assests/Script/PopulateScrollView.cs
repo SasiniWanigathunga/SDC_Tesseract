@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PopulateScrollView : MonoBehaviour
 {
@@ -25,9 +26,22 @@ public class PopulateScrollView : MonoBehaviour
             // check if the user views list is not empty
             if (GlobalManager_.Instance.UserViews.Count > i)
             {
+                // reset the color of the text fields
+                player.transform.Find("Username").GetComponent<TMPro.TextMeshProUGUI>().color = Color.white;
+                player.transform.Find("Score").GetComponent<TMPro.TextMeshProUGUI>().color = Color.white;
+
+                // Display the leaderboard
                 player.transform.Find("Rank").GetComponent<TMPro.TextMeshProUGUI>().text = (i + 1).ToString();
-                player.transform.Find("Username").GetComponent<TMPro.TextMeshProUGUI>().text = GlobalManager_.Instance.UserViews[i].Username;
                 player.transform.Find("Score").GetComponent<TMPro.TextMeshProUGUI>().text = GlobalManager_.Instance.UserViews[i].Score.ToString();
+
+                TMP_Text username = player.transform.Find("Username").GetComponent<TMPro.TextMeshProUGUI>();
+                username.text = GlobalManager_.Instance.UserViews[i].Username;
+                string our_username = GlobalManager_.Instance.Username;
+                if (username.text == our_username)
+                {
+                    username.color = Color.red;
+                    player.transform.Find("Score").GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
+                }
             }
             //reset the item's scale -- this can get munged with UI prefabs
             player.transform.localScale = Vector2.one;
