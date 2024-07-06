@@ -6,6 +6,7 @@ using TMPro;
 public class OnClick_Refresh_Top5 : MonoBehaviour
 {
     public LeaderboardManager leaderboardManager;
+    public PopulateScrollView populateScrollView;
 
     // Text fields for displaying leaderboard data
     public TMP_Text FirstPlaceUser;
@@ -27,7 +28,7 @@ public class OnClick_Refresh_Top5 : MonoBehaviour
 
     private IEnumerator WaitForUserProfiles()
     {
-        yield return new WaitUntil(() => GlobalManager_.Instance.UserViews != null && GlobalManager_.Instance.UserViews.Count > 0);
+        yield return new WaitUntil(() => leaderboardManager.AreUserProfilesLoaded);
         DisplayTop5Leaderboard();
     }
 
@@ -46,5 +47,7 @@ public class OnClick_Refresh_Top5 : MonoBehaviour
         FourthPlaceScore.text = userViews[3].Score.ToString();
         FifthPlaceUser.text = userViews[4].Username;
         FifthPlaceScore.text = userViews[4].Score.ToString();
+
+        populateScrollView.ScrollView();
     }
 }

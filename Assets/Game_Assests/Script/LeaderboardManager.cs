@@ -10,10 +10,17 @@ using System.Linq;
 
 public class LeaderboardManager : MonoBehaviour
 {
+    private bool areuserprofilesloaded = false;
+
     // Fetch player profile from the server
     public void FetchUserProfiles()
     {
         StartCoroutine(FetchProfiles());
+    }
+
+    public bool AreUserProfilesLoaded
+    {
+        get { return areuserprofilesloaded; }
     }
 
     public class Users
@@ -82,6 +89,8 @@ public class LeaderboardManager : MonoBehaviour
 
                 // create a global variable to store the userViews
                 GlobalManager_.Instance.SetUserViews(userViews);
+
+                areuserprofilesloaded = true;
             }
             else
             {

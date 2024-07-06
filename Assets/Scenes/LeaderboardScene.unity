@@ -2442,7 +2442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1110539204}
         m_TargetAssemblyTypeName: OnClick_AllPlayers, Assembly-CSharp
-        m_MethodName: FetchUserProfiles
+        m_MethodName: DisplayAllPlayers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2645,7 +2645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderboard_canvas: {fileID: 325887656}
-  leaderboardManager: {fileID: 1110539202}
   populateScrollView: {fileID: 1110539205}
 --- !u!114 &1110539205
 MonoBehaviour:
@@ -2674,6 +2673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderboardManager: {fileID: 1110539202}
+  populateScrollView: {fileID: 1110539205}
   FirstPlaceUser: {fileID: 1421482707}
   FirstPlaceScore: {fileID: 1386740306}
   SecondPlaceUser: {fileID: 815186358}

@@ -4947,7 +4947,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2137654914}
         m_TargetAssemblyTypeName: OnClick_LeaderboardButton, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: FetchUserProfiles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

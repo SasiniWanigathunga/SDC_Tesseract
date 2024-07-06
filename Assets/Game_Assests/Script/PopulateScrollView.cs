@@ -10,6 +10,12 @@ public class PopulateScrollView : MonoBehaviour
 
     public void ScrollView()
     {
+        // clear the content container
+        foreach (Transform child in m_ContentContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
         for(int i = 0; i < 30; i++)
         {
             var player = Instantiate(userPrefab, new Vector2(7, 500 - i * 300), Quaternion.identity);
