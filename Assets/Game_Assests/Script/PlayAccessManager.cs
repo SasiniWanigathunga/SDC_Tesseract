@@ -25,6 +25,7 @@ public class PlayAccessManager : MonoBehaviour
     void Play()
     {
         bool quizAttempted = GlobalManager_.Instance.QuizAttempted;
+        quizAttempted = true;
         if (quizAttempted)
         {
             ChangetoPreGameScene();

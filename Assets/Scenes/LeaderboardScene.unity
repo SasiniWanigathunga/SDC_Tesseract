@@ -627,7 +627,7 @@ Canvas:
   m_GameObject: {fileID: 325887656}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1311390757}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2620,7 +2620,7 @@ Canvas:
   m_GameObject: {fileID: 1110539197}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1311390757}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2686,9 +2686,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110539197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55dbc4f90b871cf4fadcf84e16275e84, type: 3}
+  m_Script: {fileID: 11500000, guid: daf73af1ce1b23843adbd7460b7185b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starting_transistion: {fileID: 6335077998500615580, guid: e65b6434c2ecf95409f87d0453cafe52, type: 3}
+  ending_transistion: {fileID: 2267533388104519573, guid: b635c1462b91b0d498deda3715a00404, type: 3}
 --- !u!114 &1110539204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3707,7 +3709,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1110539203}
-        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneChangeManager_, Assembly-CSharp
         m_MethodName: ChangetoMainMenu
         m_Mode: 1
         m_Arguments:

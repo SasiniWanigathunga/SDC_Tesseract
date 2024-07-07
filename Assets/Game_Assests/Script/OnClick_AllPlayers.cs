@@ -9,6 +9,7 @@ public class OnClick_AllPlayers : MonoBehaviour
 
     public void DisplayAllPlayers()
     {
+        Debug.Log("Displaying all players");
         leaderboard_canvas.SetActive(true);
         populateScrollView.ScrollView();
     }
