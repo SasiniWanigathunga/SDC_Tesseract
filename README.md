@@ -1,5 +1,18 @@
+To run the frontend of questionnaire:
+Clone the branch feature /frondend and open it in VSCode. Then, type following commands in the terminal.
+cd quiz-client
+npm start
+
+To run the backend of questionnaire :
+Clone the branch feature/backend and open it in IntelliJ IDEA
+Run QuizappApplication
+
+Since the build files of the Unity opens the game in browser, make sure to include the browser URL of the game inside the brackets of allowed origins in the following file in backend. src/test/java/com/example/demo/QuizappAopplicationTests.java
+
+
 -- Connect to the questiondb database
 \c questiondb;
+
 
 -- Insert data into the question table
 INSERT INTO question (question_id, option1, option2, option3, option4, question_title, feedback1, feedback2, feedback3, feedback4, general_feedback, right_answer_index)
