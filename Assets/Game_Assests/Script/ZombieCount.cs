@@ -35,7 +35,8 @@ public class ZombieCount : MonoBehaviour
                 // Activate the PopUpWon object
                 this.PopUpWon.SetActive(true);
                 float score = 32 - GlobalVariable.Instance.elapsedTime;
-                score = 1000/ score;
+                float credits = (float)GlobalManager_.Instance.CreditCount;
+                score = credits + 1000/ score;
                 double scaledScore = 100 / (1 + Math.Exp(-0.02 * (score - 50.0)));                
                 GlobalManager_.Instance.SetLeaderboardScore((int)scaledScore);
                 Debug.Log("Leaderboard Score: " + GlobalManager_.Instance.LeaderboardScore);
