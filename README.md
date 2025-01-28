@@ -2,7 +2,7 @@
 
 ![ECO DEFENDERS - ENERGY CLASH](./images/intro.png)
 
-![ECO DEFENDERS - ENERGY CLASH](./images/Zombie.png)
+![ECO DEFENDERS - ENERGY CLASH](./images/zombie_.png)
 
 
 To run the frontend of questionnaire:
