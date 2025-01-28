@@ -1,3 +1,7 @@
+## ECO DEFENDERS - ENERGY CLASH
+
+![ECO DEFENDERS - ENERGY CLASH](./images/intro.png)
+
 To run the frontend of questionnaire:
 Clone the branch feature /frondend and open it in VSCode. Then, type following commands in the terminal.
 cd quiz-client
