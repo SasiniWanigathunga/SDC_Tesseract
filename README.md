@@ -41,7 +41,7 @@ This project was developed as part of the EN3350 Software Design Competition at 
   - Participating in demand response programs
 - Visual feedback in the game environment (The available plants correlated to the credits you get from an energy-saving action have to be planted in the garden. You have to protect the house by attacking the zombies approaching, by simply clicking on the plants.)
 
-### Phase 4: Leaderboard
+### Leaderboard
 - Dynamically ranks players based on their game performance.
 - Criteria for ranking include energy-saving actions and other developer-defined scoring strategies.
 - Randomized scores for other players maintain engagement.
